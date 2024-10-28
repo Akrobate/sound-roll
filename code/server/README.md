@@ -22,3 +22,10 @@ pip install -r requirements.txt
 python main.py
 ```
 
+## Test
+
+```bash
+curl http://192.168.1.27:5000/volume?action=down
+curl http://192.168.1.27:5000/volume?action=up
+curl http://192.168.1.27:5000/volume?action=mute
+```
