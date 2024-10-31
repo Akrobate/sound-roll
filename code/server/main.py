@@ -1,3 +1,19 @@
+from libs.server import Server
+from threading import Thread
+
+
+print("before run")
+
+server = Server()
+# server.run()
+
+server_thread = Thread(target=lambda: server.run())
+server_thread.start()
+
+print("After run")
+
+
+'''
 from flask import Flask, request
 import os
 import subprocess
@@ -35,3 +51,4 @@ def volume():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=False)
+'''
