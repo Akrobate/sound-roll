@@ -5,9 +5,8 @@ from threading import Thread
 print("before run")
 
 server = Server()
-# server.run()
 
-server_thread = Thread(target=lambda: server.run())
+server_thread = Thread(target=lambda: server.run(5000))
 server_thread.start()
 
 print("After run")
