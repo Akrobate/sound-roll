@@ -14,8 +14,8 @@ class Server:
             else:
                 return "Invalid action. Use 'up', 'down', or 'mute'."
 
-    def run(self):
-        self.app.run(host='0.0.0.0', port=5000, debug=False)
+    def run(self, port):
+        self.app.run(host='0.0.0.0', port=port, debug=False)
 
 
     def set_volume(self, action):
