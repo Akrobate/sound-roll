@@ -7,8 +7,6 @@ Server::Server() {
 Server::Server(int port) {
     this->port = port;
     this->server = new AsyncWebServer(this->port);
-    this->server->begin();
-
 }
 
 void Server::init() {
@@ -29,4 +27,5 @@ void Server::init() {
     }
   );
 
+    this->server->begin();
 }
