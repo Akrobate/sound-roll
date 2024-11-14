@@ -1,8 +1,8 @@
 #ifndef WifiNetwork_h
 #define WifiNetwork_h
 
+#include <ESP8266WiFi.h>
 #include "Arduino.h"
-#include <ESPAsyncWebServer.h>
 #include "AsyncJson.h"
 #include "ArduinoJson.h"
 
@@ -13,11 +13,11 @@ class WifiNetwork {
         String password;
 
     public:
-        Server();
+        WifiNetwork();
         void init();
 
-        setSsid(String ssid);
-        setPassword(String password);
+        void setSsid(String ssid);
+        void setPassword(String password);
 
         String getSsid();
         String getPassword();
