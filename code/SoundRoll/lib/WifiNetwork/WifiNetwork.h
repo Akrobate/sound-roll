@@ -11,7 +11,9 @@ class WifiNetwork {
     private:
         String ssid;
         String password;
-
+        // @todo
+        Boolean is_connected = false;
+        Boolean ap_enabled = false;
     public:
         WifiNetwork();
         void init();
