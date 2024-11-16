@@ -33,6 +33,14 @@ void WifiNetwork::setPassword(String password) {
     this->password = password;
 }
 
+void WifiNetwork::setIsConnected(Boolean is_connected) {
+    this->is_connected = is_connected;
+}
+
+void WifiNetwork::setApEnabled(Boolean ap_enabled) {
+    this->ap_enabled = ap_enabled;
+}
+
 String WifiNetwork::getSsid() {
     return this->ssid;
 }
@@ -40,4 +48,13 @@ String WifiNetwork::getSsid() {
 String WifiNetwork::getPassword() {
     return this->password;
 }
+
+Boolean WifiNetwork::getIsConnected() {
+    return this->is_connected;
+}
+
+Boolean WifiNetwork::getApEnabled() {
+    return this->ap_enabled;
+}
+
 

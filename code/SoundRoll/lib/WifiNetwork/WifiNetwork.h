@@ -20,11 +20,13 @@ class WifiNetwork {
 
         void setSsid(String ssid);
         void setPassword(String password);
+        void setIsConnected(Boolean is_connected);
+        void setApEnabled(Boolean ap_enabled);
 
         String getSsid();
         String getPassword();
-
-
+        String getIsConnected();
+        String getApEnabled();
 
 };
 
