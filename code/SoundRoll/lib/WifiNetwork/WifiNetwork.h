@@ -11,9 +11,12 @@ class WifiNetwork {
     private:
         String ssid;
         String password;
-        // @todo
+
         Boolean is_connected = false;
         Boolean ap_enabled = false;
+
+        Boolean debug = true;
+
     public:
         WifiNetwork();
         void init();
@@ -22,11 +25,13 @@ class WifiNetwork {
         void setPassword(String password);
         void setIsConnected(Boolean is_connected);
         void setApEnabled(Boolean ap_enabled);
+        void setDebug(Boolean debug);
 
         String getSsid();
         String getPassword();
         String getIsConnected();
         String getApEnabled();
+        String getDebug();
 
 };
 

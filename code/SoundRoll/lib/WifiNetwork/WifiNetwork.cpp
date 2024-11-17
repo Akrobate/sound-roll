@@ -14,12 +14,16 @@ void WifiNetwork::init() {
   WiFi.begin(this->getSsid(), this->getPassword());
   int wifi_max_try = 5;
 
-  Serial.print("Connecting");
+  if (this->getDebug()) {
+    Serial.println("Connecting to wifi");
+  }
   
   int count_try = 0;
   while (WiFi.status() != WL_CONNECTED) {
     delay(200);
-    Serial.print(".");
+    if (this->getDebug()) {
+      Serial.print(".");
+    }
     count_try++;
   }
 
@@ -41,6 +45,10 @@ void WifiNetwork::setApEnabled(Boolean ap_enabled) {
     this->ap_enabled = ap_enabled;
 }
 
+void WifiNetwork::setDebug(Boolean debug) {
+    this->debug = debug;
+}
+
 String WifiNetwork::getSsid() {
     return this->ssid;
 }
@@ -57,4 +65,7 @@ Boolean WifiNetwork::getApEnabled() {
     return this->ap_enabled;
 }
 
+Boolean WifiNetwork::getDebug() {
+    return this->debug;
+}
 
