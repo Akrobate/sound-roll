@@ -7,8 +7,10 @@ WifiNetwork::WifiNetwork() {
 void WifiNetwork::init() {
 
   delay(1000);
-  // Wifi connection as AP
-  // WiFi.softAP(ssid);
+  
+  if (this->getApEnabled()) {
+    WiFi.softAP('ESP_8266_SSID');
+  }
 
   // Debug wifi connection as STA
   WiFi.begin(this->getSsid(), this->getPassword());
@@ -42,6 +44,14 @@ void WifiNetwork::setIsConnected(Boolean is_connected) {
 }
 
 void WifiNetwork::setApEnabled(Boolean ap_enabled) {
+    if (!this->getApEnabled() && ap_enabled) {
+        WiFi.softAP('ESP_8266_SSID');
+    }
+
+    if (this->getApEnabled() && !ap_enabled) {
+        WiFi.softAPdisconnect(true);
+    }
+
     this->ap_enabled = ap_enabled;
 }
 
