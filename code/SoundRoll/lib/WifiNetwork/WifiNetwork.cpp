@@ -1,7 +1,6 @@
 #include "WifiNetwork.h"
 
 WifiNetwork::WifiNetwork() {
-
 }
 
 void WifiNetwork::init() {
@@ -9,7 +8,7 @@ void WifiNetwork::init() {
   delay(1000);
   
   if (this->getApEnabled()) {
-    WiFi.softAP('ESP_8266_SSID');
+    WiFi.softAP(this->ap_ssid);
   }
 
   // Debug wifi connection as STA
@@ -45,7 +44,7 @@ void WifiNetwork::setIsConnected(Boolean is_connected) {
 
 void WifiNetwork::setApEnabled(Boolean ap_enabled) {
     if (!this->getApEnabled() && ap_enabled) {
-        WiFi.softAP('ESP_8266_SSID');
+        WiFi.softAP(this->ap_ssid);
     }
 
     if (this->getApEnabled() && !ap_enabled) {
@@ -53,6 +52,10 @@ void WifiNetwork::setApEnabled(Boolean ap_enabled) {
     }
 
     this->ap_enabled = ap_enabled;
+}
+
+void WifiNetwork::setApSsid(String ap_ssid) {
+    this->ap_ssid = ap_ssid;
 }
 
 void WifiNetwork::setDebug(Boolean debug) {
@@ -73,6 +76,10 @@ Boolean WifiNetwork::getIsConnected() {
 
 Boolean WifiNetwork::getApEnabled() {
     return this->ap_enabled;
+}
+
+String WifiNetwork::getApSsid() {
+    return this->ap_ssid;
 }
 
 Boolean WifiNetwork::getDebug() {

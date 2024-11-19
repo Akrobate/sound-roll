@@ -12,6 +12,8 @@ class WifiNetwork {
         String ssid;
         String password;
 
+        String ap_ssid = "ESP_8266_SSID";
+
         Boolean is_connected = false;
         Boolean ap_enabled = false;
 
@@ -25,12 +27,14 @@ class WifiNetwork {
         void setPassword(String password);
         void setIsConnected(Boolean is_connected);
         void setApEnabled(Boolean ap_enabled);
+        void setApSsid(String ap_ssid);
         void setDebug(Boolean debug);
 
         String getSsid();
         String getPassword();
         String getIsConnected();
         String getApEnabled();
+        String getApSsid();
         String getDebug();
 
 };
