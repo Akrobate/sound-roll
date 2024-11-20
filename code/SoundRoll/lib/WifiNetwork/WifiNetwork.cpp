@@ -13,19 +13,21 @@ void WifiNetwork::init() {
 
   // Debug wifi connection as STA
   WiFi.begin(this->getSsid(), this->getPassword());
-  int wifi_max_try = 5;
 
   if (this->getDebug()) {
     Serial.println("Connecting to wifi");
   }
   
-  int count_try = 0;
-  while (WiFi.status() != WL_CONNECTED) {
+  int tries_count = 0;
+  while (
+    WiFi.status() != WL_CONNECTED
+    && tries_count < this->getWifiMaxTry()
+) {
     delay(200);
     if (this->getDebug()) {
       Serial.print(".");
     }
-    count_try++;
+    tries_count++;
   }
 
 }
@@ -58,6 +60,10 @@ void WifiNetwork::setApSsid(String ap_ssid) {
     this->ap_ssid = ap_ssid;
 }
 
+void WifiNetwork::setWifiMaxTry(unsigned int wifi_max_try) {
+    this->wifi_max_try = wifi_max_try;
+}
+
 void WifiNetwork::setDebug(Boolean debug) {
     this->debug = debug;
 }
@@ -80,6 +86,10 @@ Boolean WifiNetwork::getApEnabled() {
 
 String WifiNetwork::getApSsid() {
     return this->ap_ssid;
+}
+
+unsigned int WifiNetwork::getWifiMaxTry() {
+    return this->wifi_max_try;
 }
 
 Boolean WifiNetwork::getDebug() {
