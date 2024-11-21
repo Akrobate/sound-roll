@@ -1,6 +1,7 @@
 #include <Arduino.h>
 
 #include <KY40Controller.h>
+#include <WifiNetwork.h>
 #include <Server.h>
 
 
@@ -8,7 +9,7 @@
 
 KY40Controller * ly_40_controller = new KY40Controller();
 Server * server = new Server(SERVER_PORT);
-
+WifiNetwork * wifi_network = new WifiNetwork();
 
 void setup() {
     server->begin();
@@ -17,3 +18,4 @@ void setup() {
 void loop() {
     
 }
+
