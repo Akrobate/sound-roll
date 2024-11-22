@@ -10,3 +10,6 @@ KY40Controller::KY40Controller(int pin_clk, int pin_dt, int pin_sw) {
     this->PIN_SW = pin_sw;
 }
 
+void KY40Controller::init() {
+
+}

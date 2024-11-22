@@ -14,7 +14,9 @@ class KY40Controller {
         KY40Controller();
         KY40Controller(int pin_clk, int pin_dt, int pin_sw);
 
+        void init();
         void update();
+
 };
 
 #endif
