@@ -1,5 +1,5 @@
 DIST_DIR="dist"
-ESP_DATA_DIR="../WebRadio/data/webinterface"
+ESP_DATA_DIR="../SoundRoll/data/webinterface"
 
 
 if [ -d "$DIST_DIR" ]; then
