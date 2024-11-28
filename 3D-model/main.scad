@@ -1,6 +1,7 @@
 use <./assets/batteryCustom.scad>
 use <./assets/ESP8266Models.scad>
 use <./pieces/knobFacadeAPiece.scad>
+use <./pieces/knobFacadeBPiece.scad>
 
 translate([0, -30, 0])
     rotate([0,180,0])
