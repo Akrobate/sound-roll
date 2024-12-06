@@ -3,10 +3,12 @@ use <./assets/ESP8266Models.scad>
 use <./components/BottomComponent.scad>
 use <./components/TopComponent.scad>
 
+include <configurations/global.scad>
 
 module main(
-    top_component_position = [0,0,50],
-    bottom_component_position = [0,0,0]
+    top_component_position = main_top_component_position,
+    bottom_component_position = main_bottom_component_position,
+    battery_custom_position = main_battery_custom_position
 ) {
 
     translate([0, -30, 0])
@@ -19,7 +21,7 @@ module main(
     translate(top_component_position)
         TopComponent();
 
-    translate([- 75.5 / 2, -21.4 / 2, 0])
+    translate(battery_custom_position)
         batteryCustom();
 }
 
