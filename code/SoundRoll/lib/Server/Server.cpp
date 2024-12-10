@@ -22,7 +22,6 @@ void Server::init() {
     "/",
     HTTP_GET,
     [](AsyncWebServerRequest * request){
-        string index_html = "<!DOCTYPE html><html><head><title>SoundRoll</title></head><body><h1>SoundRoll</h1></body></html>";
         request->send_P(200, "text/html", index_html);
     }
   );

@@ -5,6 +5,10 @@
 #include "AsyncJson.h"
 #include "ArduinoJson.h"
 
+const char index_html[] PROGMEM = R"rawliteral(
+<!DOCTYPE html><html><head><title>SoundRoll</title></head><body><h1>SoundRoll</h1></body></html>
+)rawliteral";
+
 class Server {
 
     private:
