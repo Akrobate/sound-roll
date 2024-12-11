@@ -12,6 +12,7 @@ Server * server = new Server(SERVER_PORT);
 WifiNetwork * wifi_network = new WifiNetwork();
 
 void setup() {
+    Serial.begin(115200);
     wifi_network->init();
     ky_40_controller->init();
     server->begin();
