@@ -12,7 +12,7 @@
  * }
  */
 
-#define NETWORK_CREDENTIAL_FILE "/configurations.json"
+#define CONFIGURATION_FILE "/configurations.json"
 
 class FileRepository {
 
