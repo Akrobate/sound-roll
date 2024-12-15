@@ -22,7 +22,6 @@ class FileRepository {
         DynamicJsonDocument * network_credential_list = nullptr;
 
         void init();
-
         boolean load();
         boolean save();
 
