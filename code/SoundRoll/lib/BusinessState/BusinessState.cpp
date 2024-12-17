@@ -1,4 +1,4 @@
-'use strict';
+#include "BusinessState.h"
 
 BusinessState::BusinessState() {
     
