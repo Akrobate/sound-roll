@@ -26,5 +26,38 @@ void Server::init() {
     }
   );
 
+  this->server->on(
+    "/api/wifi-credentials",
+    HTTP_POST,
+    [&](AsyncWebServerRequest *request) {
+
+      String ssid = "";
+      String password = "";
+      if (request->hasParam("ssid", true)) {
+        ssid = request->getParam("ssid", true)->value();
+      } else {
+        request->send(400, "text/html", "Missing ssid");
+        return;
+      }
+
+      if (request->hasParam("password", true)) {
+        password = request->getParam("password", true)->value();
+      } else {
+        request->send(400, "text/html", "Missing password");
+        return;
+      }
+
+      Serial.print("ADD ssid : ");
+      Serial.println(ssid);
+      Serial.print("password : ");
+      Serial.println(password);
+
+      // this->network_credential->upsertCredential(ssid, password);
+      request->send(201, "text/html", "OK");
+    }
+  );
+
+
+
     this->server->begin();
 }
