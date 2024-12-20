@@ -28,3 +28,7 @@ bool FileRepository::load() {
     delete doc;
     return true;
 }
+
+void setFilename(String filename) {
+    this->filename = filename;
+}
