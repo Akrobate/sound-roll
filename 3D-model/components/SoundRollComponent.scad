@@ -2,7 +2,6 @@ use <../assets/batteryCustom.scad>
 use <../assets/ESP8266Models.scad>
 use <../components/BottomComponent.scad>
 use <../components/TopComponent.scad>
-
 include <../configurations/global.scad>
 
 module SoundRollComponent(
@@ -19,11 +18,11 @@ module SoundRollComponent(
         BottomComponent();
 
     translate(top_component_position)
-        TopComponent();
+        rotate([0,180,0])
+            TopComponent();
 
     translate(battery_custom_position)
         batteryCustom();
 }
-
 
 SoundRollComponent();
