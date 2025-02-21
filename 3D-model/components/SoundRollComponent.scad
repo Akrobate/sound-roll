@@ -7,7 +7,8 @@ include <../configurations/global.scad>
 module SoundRollComponent(
     top_component_position = sound_roll_component_top_component_position,
     bottom_component_position = sound_roll_component_bottom_component_position,
-    battery_custom_position = sound_roll_component_battery_custom_position
+    battery_custom_position = sound_roll_component_battery_custom_position,
+    top_facade_piece_z = top_component_top_facade_piece_z
 ) {
 
     translate([0, -30, 0])
@@ -19,6 +20,7 @@ module SoundRollComponent(
 
     translate(top_component_position)
         rotate([0,180,0])
+        translate([0,0,top_facade_piece_z])
             TopComponent();
 
     translate(battery_custom_position)
