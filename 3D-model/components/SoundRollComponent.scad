@@ -2,7 +2,10 @@ use <../assets/batteryCustom.scad>
 use <../assets/ESP8266Models.scad>
 use <../components/BottomComponent.scad>
 use <../components/TopComponent.scad>
+use <../pieces/subpieces/breadboard.scad>
 include <../configurations/global.scad>
+include <../assets/usb-charger/configurations.scad>
+use <../assets/usb-charger/usb-charger.scad>
 
 module SoundRollComponent(
     top_component_position = sound_roll_component_top_component_position,
@@ -25,6 +28,8 @@ module SoundRollComponent(
 
     translate(battery_custom_position)
         batteryCustom();
+
+    usbCharger();
 }
 
 SoundRollComponent();
